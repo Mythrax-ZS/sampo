@@ -19,4 +19,5 @@
 //!
 //! The `sampo` binary puts a command line in front of the last two.
 
+pub mod banner;
 pub mod proto;
