@@ -1,0 +1,22 @@
+[package]
+name = "sampo"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "An IRC server and terminal client in the classic style: RFC 1459, forged in Rust."
+readme = "README.md"
+keywords = ["irc", "chat", "rfc1459", "server", "client"]
+categories = ["network-programming", "command-line-utilities"]
+
+[dependencies]
+# Local wall-clock time, with daylight saving, on every platform.
+chrono = { version = "0.4.45", default-features = false, features = ["clock"] }
+# The terminal: raw mode, cursor, colour and keys on Windows and Unix alike.
+crossterm = { version = "0.29", default-features = false, features = ["bracketed-paste", "events", "windows"] }
+# Sockets, timers and signals. One thread is all an IRC server ever needed.
+tokio = { version = "1.54", features = ["io-util", "macros", "net", "rt", "signal", "sync", "time"] }
+# How many columns a character takes, so long lines wrap where they should.
+unicode-width = { version = "0.2", default-features = false }
+
+[dev-dependencies]
+tokio = { version = "1.54", features = ["test-util"] }
