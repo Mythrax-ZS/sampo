@@ -20,5 +20,6 @@
 //! The `sampo` binary puts a command line in front of the last two.
 
 pub mod banner;
+pub mod client;
 pub mod proto;
 pub mod server;
